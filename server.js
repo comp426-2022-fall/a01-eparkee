@@ -10,7 +10,7 @@ const fs = require('fs');
 // Define a const `port` using the argument from the command line. 
 // Make this const default to port 3000 if there is no argument given for `--port`.
 const port = require('minimist')(process.argv.slice(2)) || 3000;
-if(isNaN(port.port)){
+if(isNaN(port.port) || port.port < 0 || port.port > 65536 ){
 	port.port = 3000}
 else{
 	port.port = parseInt(port.port)
