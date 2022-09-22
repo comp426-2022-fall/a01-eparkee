@@ -20,7 +20,7 @@ fs.readFile('./public/index.html', 'Utf8', (err, data) => {
 		      console.error(err);
 		      return;
 		    }
-	 // console.log(data);
+	 text = data;
 });
 
 // If there is an error, put it on the console error and return. 
@@ -39,7 +39,7 @@ fs.readFile('./public/index.html', 'Utf8', (err, data) => {
 const server = http.createServer((req, res) => {
 	  res.statusCode = 200
 	  res.setHeader('Content-Type', 'text/html')
-	  res.end('./public/index.html')
+	  res.end(text)
 })
 
 
